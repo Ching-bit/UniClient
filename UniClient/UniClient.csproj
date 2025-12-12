@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+        <AvaloniaUseCompiledBindingsByDefault>false</AvaloniaUseCompiledBindingsByDefault>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <OutputPath>..\bin\Debug\</OutputPath>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <OutputPath>..\bin\Release\</OutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Control.Basic\Control.Basic.csproj" />
+      <ProjectReference Include="..\Framework.Common\Framework.Common.csproj" />
+      <ProjectReference Include="..\Framework.Consts\Framework.Consts.csproj" />
+      <ProjectReference Include="..\Plugin.AppEnv\Plugin.AppEnv.csproj" />
+      <ProjectReference Include="..\Plugin.Grpc\Plugin.Grpc.csproj" />
+      <ProjectReference Include="..\Plugin.Log\Plugin.Log.csproj" />
+      <ProjectReference Include="..\Plugin.Thrift\Plugin.Thrift.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Views\Windows\LoginWindow.axaml.cs">
+        <DependentUpon>LoginWindow.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\Panels\LoginView.axaml.cs">
+        <DependentUpon>LoginView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Views\Panels\TitleBarRightView.axaml.cs">
+        <DependentUpon>TitleBarRightView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <AvaloniaXaml Remove="Resources\StringResouces.zht.axaml" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <AdditionalFiles Include="Resources\Styles\BasicStyles.axaml" />
+    </ItemGroup>
+
+    <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="xcopy /s /y /c &quot;$(SolutionDir)\resource&quot; &quot;$(TargetDir)&quot;" />
+    </Target>
+</Project>

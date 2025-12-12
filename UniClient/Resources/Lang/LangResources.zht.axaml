@@ -1,0 +1,28 @@
+<ResourceDictionary
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:system="clr-namespace:System;assembly=System.Runtime">
+
+    <system:String x:Key="R_STR_USERNAME">賬號</system:String>
+    <system:String x:Key="R_STR_PASSWORD">密碼</system:String>
+    <system:String x:Key="R_STR_LOGIN">登錄</system:String>
+    <system:String x:Key="R_STR_AUTO_LOGIN">自動登錄</system:String>
+    <system:String x:Key="R_STR_REMEMBER_ME">記住帳號</system:String>
+    <system:String x:Key="R_STR_OK">確定</system:String>
+    <system:String x:Key="R_STR_CANCEL">取消</system:String>
+    <system:String x:Key="R_STR_SETTING">設置</system:String>
+    <system:String x:Key="R_STR_LANGUAGE">語言</system:String>
+    <system:String x:Key="R_STR_THEME">主題</system:String>
+    <system:String x:Key="R_STR_TEST_DELAY">測試延時</system:String>
+    <system:String x:Key="R_STR_CONN_NAME">名稱</system:String>
+    <system:String x:Key="R_STR_ADDRESS">地址</system:String>
+    <system:String x:Key="R_STR_DELAY_MS">延時(ms)</system:String>
+    <system:String x:Key="R_STR_CHANGE_CONN_NOTICE">若改變連接地址客戶端將斷開重連，是否繼續？</system:String>
+    <system:String x:Key="R_STR_NEW_VERSION_RELEASED">新版本已發佈，請更新</system:String>
+    <system:String x:Key="R_STR_UPDATE_FAILED_NOTICE">更新客戶端失敗，是否繼續？</system:String>
+    <system:String x:Key="R_STR_MENU">菜單</system:String>
+    <system:String x:Key="R_STR_HOMEPAGE">主頁</system:String>
+    <system:String x:Key="R_STR_DEMO">示例</system:String>
+    <system:String x:Key="R_STR_TEST">測試</system:String>
+
+</ResourceDictionary>

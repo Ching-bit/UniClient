@@ -1,0 +1,26 @@
+<ArrayOfMenuConf>
+    <MenuConf>
+        <Id>20000</Id>
+        <ParentId></ParentId>
+        <Name></Name>
+        <ResourceName>R_STR_DEMO</ResourceName>
+        <Assembly></Assembly>
+        <ViewName></ViewName>
+    </MenuConf>
+    <MenuConf>
+        <Id>20001</Id>
+        <ParentId>20000</ParentId>
+        <Name></Name>
+        <ResourceName>R_STR_DEMO</ResourceName>
+        <Assembly>Menu.Demo</Assembly>
+        <ViewName>DemoView</ViewName>
+    </MenuConf>
+    <MenuConf>
+        <Id>20002</Id>
+        <ParentId>20000</ParentId>
+        <Name></Name>
+        <ResourceName>R_STR_TEST</ResourceName>
+        <Assembly>Menu.Demo</Assembly>
+        <ViewName>TestView</ViewName>
+    </MenuConf>
+</ArrayOfMenuConf>

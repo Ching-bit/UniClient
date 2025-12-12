@@ -1,0 +1,19 @@
+<AppConf>
+    <UpdateAddrs>https://127.0.0.1:8443/uniserver</UpdateAddrs>
+    <UpdateUsername>uniclient</UpdateUsername>
+    <UpdatePassword>uniclient</UpdatePassword>
+    <UpdateConfPath>/UpdateConf.xml</UpdateConfPath>
+    <UpdateExeName>UniClient.Update</UpdateExeName>
+    <UpdateCacheDir>userdata/update</UpdateCacheDir>
+
+    <ConnConfPath>sys/Conns.xml</ConnConfPath>
+    <MenuConfPath>sys/Menus.xml</MenuConfPath>
+    <PluginConfPath>sys/Plugins.xml</PluginConfPath>
+    <UserDataDir>userdata</UserDataDir>
+    <LogPath>logs/{YYYYMMDD}/AppLog{YYYYMMDD}.log</LogPath>
+    <CanAutoLogin>true</CanAutoLogin>
+
+    <ThriftProtocol>Binary</ThriftProtocol>
+    <ThriftPoolMaxSize>5</ThriftPoolMaxSize>
+    <ThriftClientIdleTimeout>30</ThriftClientIdleTimeout>
+</AppConf>

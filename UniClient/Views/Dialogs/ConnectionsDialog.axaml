@@ -1,0 +1,48 @@
+<UserControl
+    xmlns="https://github.com/avaloniaui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:ursa="https://irihi.tech/ursa"
+    xmlns:ctrl="clr-namespace:Control.Basic;assembly=Control.Basic"
+    xmlns:local="clr-namespace:UniClient"
+    x:Class="UniClient.ConnectionsDialog">
+    
+    <ctrl:ConfirmDialog ReturnParameter="{Binding ConnConfs}">
+        <StackPanel Orientation="Vertical">
+            <Button Content="{DynamicResource R_STR_TEST_DELAY}"
+                    HorizontalAlignment="Left" Width="80" Height="10" FontSize="10"
+                    Command="{Binding TestDelayCommand}"/>
+            <DataGrid ItemsSource="{Binding ConnConfs}"
+                      FontSize="12" Margin="0,15"
+                      CanUserSortColumns="False"
+                      AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <RadioButton GroupName="RadioGroup"
+                                             IsChecked="{Binding IsSelected}"
+                                             HorizontalAlignment="Center"
+                                             VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="{DynamicResource R_STR_CONN_NAME}" Binding="{Binding Name}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="{DynamicResource R_STR_ADDRESS}" Binding="{Binding Address}" IsReadOnly="True"/>
+                    <DataGridTemplateColumn Header="{DynamicResource R_STR_DELAY_MS}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <ctrl:NetDelayTextBlock
+                                    Delay="{Binding Delay}"
+                                    WarnThreshold="100" ErrorThreshold="200"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            
+        </StackPanel>
+    </ctrl:ConfirmDialog>
+    
+</UserControl>
