@@ -1,7 +1,7 @@
 # 介紹
 一個通用的客戶端模板，主要目的是將客戶端開發的一些通用的功能實現，並實現組件可插拔式的配置化，能快速地修改為實際項目所需要的形式。項目主要使用了以下開源框架：
 
-**Avalonia**：基本框架，社區開源，Avalonia可看成是WPF的升級版，在WPF上進行了多項優化，而且最重要地，Avalonia是跨平台的，一套代碼支持Windows、Linux、IOS；
+**Avalonia**：基本框架，社區開源，Avalonia可看成是WPF的升級版，在WPF上進行了多項優化，而且最重要地，Avalonia是跨平台的，一套代碼支持Windows、Linux、MacOS；
 
 **Semi.Avalonia**、**Irihi.Ursa**：UI庫，三方開源；
 
