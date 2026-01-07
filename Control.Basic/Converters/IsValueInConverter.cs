@@ -12,7 +12,7 @@ public class IsValueInConverter : IValueConverter
             return false;
         }
         
-        string[] validValues = parameterString.Split(',');
+        string[] validValues = parameterString.Split('|');
         return validValues.Any(validValue => validValue.Equals(value + ""));
     }
 
