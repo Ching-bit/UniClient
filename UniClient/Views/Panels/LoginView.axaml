@@ -20,7 +20,7 @@
         </StackPanel>
         
         <!-- Auto-login and Remember Me -->
-        <StackPanel Classes="Common" Orientation="Horizontal" HorizontalAlignment="Right">
+        <StackPanel Classes="Common" Orientation="Horizontal" HorizontalAlignment="Left">
             <CheckBox Content="{DynamicResource R_STR_AUTO_LOGIN}"
                       IsVisible="{Binding CanAutoLogin}"
                       IsChecked="{Binding IsAutoLogin}"
