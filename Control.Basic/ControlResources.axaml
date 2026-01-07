@@ -4,6 +4,7 @@
     
     <local:BoolAndConverter x:Key="BoolAndConverter"/>
     <local:BoolReverseConverter x:Key="BoolReverseConverter"/>
+    <local:IsValueInConverter x:Key="IsValueInConverter"/>
     <local:NumberEqualsConverter x:Key="NumberEqualsConverter"/>
     <local:StringNotEmptyConverter x:Key="StringNotEmptyConverter"/>
     <local:SubStringConverter x:Key="SubStringConverter"/>
