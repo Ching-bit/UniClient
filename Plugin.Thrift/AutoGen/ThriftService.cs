@@ -1,6 +1,6 @@
 namespace Plugin.Thrift;
 
-public partial class ThriftService : IThriftService
+public partial class ThriftService
 {
     private void Init()
     {

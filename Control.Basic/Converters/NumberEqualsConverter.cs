@@ -16,7 +16,7 @@ public class NumberEqualsConverter : IValueConverter
         return Math.Abs(n1 - n2) < 1e-10;
     }
 
-    public object? ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
+    public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
     {
         throw new NotImplementedException();
     }

@@ -30,7 +30,7 @@ public static class HttpHelper
     private static HttpClient CreateHttpClient(bool ignoreInvalidCert, IAuth? auth)
     {
         HttpClient client = ignoreInvalidCert ?
-            new HttpClient(new HttpClientHandler { ServerCertificateCustomValidationCallback = (sender, cer, chain, errors) => true }) :
+            new HttpClient(new HttpClientHandler { ServerCertificateCustomValidationCallback = (_, _, _, _) => true }) :
             new HttpClient();
         client.DefaultRequestHeaders.Authorization = auth?.ToAuthValue();
         return client;

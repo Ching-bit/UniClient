@@ -1,5 +1,4 @@
 using Attributes.Avalonia;
-using Avalonia;
 using Avalonia.Controls;
 
 namespace Control.Basic;

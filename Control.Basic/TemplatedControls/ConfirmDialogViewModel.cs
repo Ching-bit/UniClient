@@ -1,4 +1,3 @@
-using System;
 using CommunityToolkit.Mvvm.Input;
 using Framework.Common;
 using Irihi.Avalonia.Shared.Contracts;
