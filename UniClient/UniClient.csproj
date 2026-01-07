@@ -48,6 +48,6 @@
     </ItemGroup>
 
     <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-      <Exec Command="xcopy /s /y /c &quot;$(SolutionDir)\resource&quot; &quot;$(TargetDir)&quot;" />
+      <Exec Command="xcopy /e /y /c &quot;$(SolutionDir)\resource&quot; &quot;$(TargetDir)&quot;" />
     </Target>
 </Project>
