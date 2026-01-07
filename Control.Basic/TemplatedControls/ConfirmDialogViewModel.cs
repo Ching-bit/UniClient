@@ -18,8 +18,11 @@ public partial class ConfirmDialogViewModel : UniViewModel, IDialogContext
     
     
     #region Commands
+    public event Action? OnConfirmEvent;
+    
     [RelayCommand] private void Ok()
     {
+        OnConfirmEvent?.Invoke();
         RequestClose?.Invoke(this, new ConfirmDialogResult()
         {
             IsConfirmed = true,
