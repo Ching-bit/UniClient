@@ -93,5 +93,25 @@ public static class ObjectHelper
             property.SetValue(dest, property.GetValue(src));
         }
     }
+    
+    public static bool Equals<T>(T objA, T objB)
+    {
+        Type type = typeof(T);
+        PropertyInfo[] properties = type.GetProperties();
+
+        foreach (PropertyInfo property in properties)
+        {
+            object? valueA = property.GetValue(objA);
+            object? valueB = property.GetValue(objB);
+            if (null == valueA && null != valueB ||
+                null != valueA && null == valueB ||
+                null != valueA && null != valueB && !valueA.Equals(valueB))
+            {
+                return false;
+            }
+        }
+        
+        return true;
+    }
 
 }
