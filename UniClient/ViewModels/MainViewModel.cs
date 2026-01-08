@@ -19,7 +19,7 @@ public partial class MainViewModel : UniViewModel
         }
         
         // register language changed
-        WeakReferenceMessenger.Default.Register<LanguageChangedMessage>(this, (r, m) =>
+        WeakReferenceMessenger.Default.Register<LanguageChangedMessage>(this, (_, _) =>
         {
             foreach (MenuConf menuConf in Menus)
             {
