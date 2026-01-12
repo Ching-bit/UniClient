@@ -10,7 +10,6 @@ using Control.Basic;
 using Framework.Common;
 using Plugin.AppEnv;
 using Plugin.Log;
-using Ursa.Controls;
 
 namespace UniClient;
 
@@ -147,10 +146,11 @@ public partial class LoginViewModel : UniViewModel
         
         // Thrift
         Plugin.Thrift.UserServiceLoginResponse thriftResponse = new();
-        worker.DoWork += async (_, _) =>
+        worker.DoWork += (_, _) =>
         {
             try
             {
+                /*
                 Plugin.Thrift.UserServiceLoginRequest request = new()
                 {
                     Username = Username,
@@ -160,6 +160,7 @@ public partial class LoginViewModel : UniViewModel
                 {
                     thriftResponse = await client.Login(request);
                 });
+                */
             }
             catch (Exception e)
             {
@@ -241,23 +242,7 @@ public partial class LoginViewModel : UniViewModel
                         SystemConfig.AppConf.UpdatePassword,
                         this))
                 {
-                    ConfirmDialogResult? result =
-                        await Dialog.ShowCustomModal<ConfirmDialogResult>(
-                            new MessageDialog
-                            {
-                                Message = ResourceHelper.FindStringResource("R_STR_UPDATE_FAILED_NOTICE"),
-                                IsAutoClick = true,
-                                IsOkDefault = false
-                            },
-                            new ConfirmDialogViewModel(),
-                            options: new DialogOptions
-                            {
-                                Mode = DialogMode.Warning,
-                                CanDragMove = true,
-                                IsCloseButtonVisible = true,
-                                CanResize = false
-                            });
-                    if (false == result?.IsConfirmed)
+                    if (!await MessageDialog.Show("R_STR_UPDATE_FAILED_NOTICE", isAutoClick: true))
                     {
                         Global.Get<IAppEnv>().User = null;
                         return;

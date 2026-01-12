@@ -8,47 +8,27 @@ using Framework.Common;
 using Plugin.AppEnv;
 using Plugin.Log;
 using UniClient.Models;
-using Ursa.Controls;
 
 namespace UniClient;
 
 public partial class TitleBarRightViewModel : UniViewModel
 {
-    [RelayCommand] private async Task Setting()
+    [RelayCommand]
+    private async Task Setting()
     {
-        ConfirmDialogResult? result =
-            await Dialog.ShowCustomModal<SettingDialog, SettingDialogViewModel, ConfirmDialogResult>(
-                new SettingDialogViewModel(),
-                options: new DialogOptions
-                {
-                    // Title = ResourceHelper.FindStringResource("R_STR_SETTING", string.Empty),
-                    Mode = DialogMode.Info,
-                    CanDragMove = true,
-                    IsCloseButtonVisible = true,
-                    CanResize = false
-                });
-        if (true != result?.IsConfirmed ||
-            result.ReturnParameter is not SettingModel settingModel)
+        ConfirmDialogResult confirmResult = await ConfirmDialog.Show<SettingDialog, SettingDialogViewModel>();
+        if (!confirmResult.IsConfirmed || confirmResult.ReturnParameter is not SettingModel settingModel)
         {
             return;
         }
         settingModel.SyncToGlobalSetting();
     }
 
-    [RelayCommand] private async Task Connections()
+    [RelayCommand]
+    private async Task Connections()
     {
-        ConfirmDialogResult? result =
-            await Dialog.ShowCustomModal<ConnectionsDialog, ConnectionsDialogViewModel, ConfirmDialogResult>(
-                new ConnectionsDialogViewModel(),
-                options: new DialogOptions
-                {
-                    Mode = DialogMode.Info,
-                    CanDragMove = true,
-                    IsCloseButtonVisible = true,
-                    CanResize = false
-                });
-        if (true != result?.IsConfirmed ||
-            result.ReturnParameter is not ObservableCollection<ConnConfModel> connConfs)
+        ConfirmDialogResult confirmResult = await ConfirmDialog.Show<ConnectionsDialog, ConnectionsDialogViewModel>();
+        if (!confirmResult.IsConfirmed || confirmResult.ReturnParameter is not ObservableCollection<ConnConfModel> connConfs)
         {
             return;
         }
@@ -61,26 +41,10 @@ public partial class TitleBarRightViewModel : UniViewModel
         }
 
         if (selectedConnName != Global.Get<IGlobalSetting>().SelectedConn &&
-            null != Global.Get<IAppEnv>().User)
+            null != Global.Get<IAppEnv>().User &&
+            !await MessageDialog.Show("R_STR_CHANGE_CONN_NOTICE", isCancelButtonVisible: true))
         {
-            MessageDialog messageDialog = new MessageDialog
-            {
-                Message = ResourceHelper.FindStringResource("R_STR_CHANGE_CONN_NOTICE")
-            };
-            ConfirmDialogResult? reconnectConfirmResult =
-                await Dialog.ShowCustomModal<ConfirmDialogResult>(
-                    messageDialog, new ConfirmDialogViewModel(),
-                    options: new DialogOptions
-                    {
-                        Mode = DialogMode.Info,
-                        CanDragMove = true,
-                        IsCloseButtonVisible = true,
-                        CanResize = false
-                    });
-            if (true != reconnectConfirmResult?.IsConfirmed)
-            {
-                return;
-            }
+            return;
         }
 
         Global.Get<IGlobalSetting>().SelectedConn = selectedConnName;
