@@ -51,7 +51,7 @@ public partial class ConfirmDialog : TemplatedControl
         {
             AutoClickSeconds = Math.Max(0, AutoClickSeconds);
             
-            _autoClickTimer.Tick += (s, args) =>
+            _autoClickTimer.Tick += (_, _) =>
             {
                 if (AutoClickSeconds > 0)
                 {

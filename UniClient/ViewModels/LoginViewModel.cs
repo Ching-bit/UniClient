@@ -242,7 +242,7 @@ public partial class LoginViewModel : UniViewModel
                         SystemConfig.AppConf.UpdatePassword,
                         this))
                 {
-                    if (!await MessageDialog.Show("R_STR_UPDATE_FAILED_NOTICE", isAutoClick: true))
+                    if (!await MessageDialog.Show("R_STR_UPDATE_FAILED_NOTICE", isAutoClick: true, isCancelButtonVisible: true))
                     {
                         Global.Get<IAppEnv>().User = null;
                         return;

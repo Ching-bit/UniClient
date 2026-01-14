@@ -1,5 +1,13 @@
 <ArrayOfMenuConf>
     <MenuConf>
+        <Id>10000</Id>
+        <ParentId></ParentId>
+        <Name></Name>
+        <ResourceName>R_STR_DEMO</ResourceName>
+        <Assembly></Assembly>
+        <ViewName></ViewName>
+    </MenuConf>
+    <MenuConf>
         <Id>20000</Id>
         <ParentId></ParentId>
         <Name></Name>

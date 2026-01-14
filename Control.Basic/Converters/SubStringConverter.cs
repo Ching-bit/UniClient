@@ -28,8 +28,15 @@ public class SubStringConverter :　IValueConverter
         {
             return string.Empty;
         }
-        
-        return str.Substring(startIndex, len);
+
+        try
+        {
+            return str.Substring(startIndex, len);
+        }
+        catch
+        {
+            return string.Empty;
+        }
     }
 
     public object ConvertBack(object? value, Type targetType, object? parameter, CultureInfo culture)
