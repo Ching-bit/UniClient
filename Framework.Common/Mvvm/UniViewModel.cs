@@ -8,20 +8,30 @@ namespace Framework.Common;
 public class UniViewModel : ObservableObject
 {
     public Control? View { get; set; }
-
+    
     public virtual void OnLoaded(object? sender, RoutedEventArgs e)
     {
         TopLevel? topLevel = TopLevel.GetTopLevel(View);
         if (_lastTopLevel != topLevel)
         {
             _lastTopLevel = topLevel;
-            _notificationManager = new WindowNotificationManager(TopLevel.GetTopLevel(View))
+            _notificationManager = new WindowNotificationManager(_lastTopLevel)
             {
                 Position = NotificationPosition.TopCenter,
                 MaxItems = 1
             };
         }
     }
+    
+
+    #region Lifecycle Functions for UniMenu
+    public virtual void OnMenuInit() { }
+    public virtual void OnMenuShown() { }
+    public virtual void OnMenuHidden() { }
+    public virtual void OnMenuClosing() { }
+    public virtual void OnMenuClosed() { }
+    #endregion
+    
     
     protected void ShowNotification(string message, NotificationType notificationType)
     {
