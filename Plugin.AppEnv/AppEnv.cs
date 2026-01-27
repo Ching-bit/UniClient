@@ -45,7 +45,7 @@ internal class AppEnv : IAppEnv
 
     public UserInfo? User { get; set; }
     
-    public string UserDataDir { get; set; } = string.Empty;
+    public string UserDataDir { get; private set; } = string.Empty;
     #endregion
     
 
