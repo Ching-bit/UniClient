@@ -2,7 +2,12 @@
     <Language>en</Language>
     <Theme>Light</Theme>
     <SelectedConn>Test</SelectedConn>
-    <LastUsers />
+    <LastUsers>
+        <UserInfo>
+            <Username>admin</Username>
+            <Password></Password>
+        </UserInfo>
+    </LastUsers>
     <IsRememberAccount>false</IsRememberAccount>
     <IsAutoLogin>false</IsAutoLogin>
 </GlobalSetting>

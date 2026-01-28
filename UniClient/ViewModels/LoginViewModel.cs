@@ -134,7 +134,8 @@ public partial class LoginViewModel : UniViewModel
     #endregion
     
     
-    [RelayCommand] private void Login()
+    [RelayCommand]
+    private void Login()
     {
         Global.LoginPlugins();
         
@@ -210,7 +211,7 @@ public partial class LoginViewModel : UniViewModel
             }
 
             // update AppEnv plugin
-            Global.Get<IAppEnv>().User = new()
+            Global.Get<IAppEnv>().User = new UserInfo
             {
                 Username = Username,
                 Password = Password,
