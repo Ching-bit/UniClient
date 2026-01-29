@@ -15,7 +15,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Attributes.Avalonia" Version="1.0.3" />
+      <PackageReference Include="Attributes.Avalonia" Version="1.0.5" />
       <PackageReference Include="Avalonia" Version="11.3.9" />
       <PackageReference Include="Avalonia.Desktop" Version="11.3.9" />
       <PackageReference Include="Avalonia.Diagnostics" Version="11.3.9" />
@@ -34,6 +34,7 @@
       <PackageReference Include="Semi.Avalonia" Version="11.3.7.1" />
       <PackageReference Include="Semi.Avalonia.DataGrid" Version="11.3.7.1" />
       <PackageReference Include="Semi.Avalonia.Dock" Version="11.3.6.2" />
+      <PackageReference Include="Xaml.Behaviors" Version="11.3.9.3" />
     </ItemGroup>
 
     <ItemGroup>
