@@ -22,6 +22,7 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
     
+    <!-- Text Input -->
     <Style Selector="TextBox.Common">
         <Setter Property="Width" Value="210"/>
         <Setter Property="Margin" Value="5"/>
@@ -30,6 +31,14 @@
         <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
     </Style>
     
+    <Style Selector="NumericUpDown.Common">
+        <Setter Property="Width" Value="210"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    
+    <!-- Button -->
     <Style Selector="Button.Common">
         <Setter Property="Width" Value="110"/>
         <Setter Property="Height" Value="30"/>
@@ -38,14 +47,35 @@
         <Setter Property="HorizontalAlignment" Value="Center"/>
     </Style>
     
+    <!-- Combo Box -->
     <Style Selector="ComboBox.Common">
         <Setter Property="Width" Value="210"/>
         <Setter Property="Margin" Value="5"/>
     </Style>
     
+    <Style Selector="ursa|EnumSelector.Common">
+        <Setter Property="Width" Value="210"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+    </Style>
+    
     <Style Selector="ursa|AutoCompleteBox.Common">
         <Setter Property="Width" Value="210"/>
         <Setter Property="Margin" Value="5"/>
+    </Style>
+    
+    <Style Selector="ursa|MultiComboBox.Common">
+        <Setter Property="Width" Value="210"/>
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+        <Setter Property="MaxDropDownHeight" Value="200"/>
+        <Setter Property="ItemTemplate">
+            <DataTemplate>
+                <TextBlock Text="{Binding}"/>
+            </DataTemplate>
+        </Setter>
     </Style>
     
     <Style Selector="CheckBox.Common">
@@ -54,6 +84,7 @@
         <Setter Property="VerticalAlignment" Value="Center"/>
     </Style>
     
+    <!-- Headered -->
     <Style Selector="HeaderedContentControl.Common">
         <Setter Property="HeaderTemplate">
             <Setter.Value>
@@ -83,7 +114,7 @@
                             Text="{Binding Title}"
                             IsVisible="{Binding Title, Converter={StaticResource StringNotEmptyConverter}}"
                             VerticalAlignment="Center"
-                            Width="100" Margin="4"
+                            Width="160" Margin="4"
                             FontSize="14"
                             Foreground="{DynamicResource SemiColorText0}"/>
                     </StackPanel>
