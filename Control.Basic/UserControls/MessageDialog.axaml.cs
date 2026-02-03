@@ -3,7 +3,7 @@ using Avalonia.Controls;
 
 namespace Control.Basic;
 
-[WithDirectProperty(typeof(string), "Message")]
+[WithDirectProperty(typeof(string), "Message", nullable: true)]
 [WithDirectProperty(typeof(bool), "IsAutoClick", false)]
 [WithDirectProperty(typeof(bool), "IsOkDefault", true)]
 [WithDirectProperty(typeof(int), "AutoClickSeconds", 10)]

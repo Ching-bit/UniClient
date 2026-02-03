@@ -7,7 +7,7 @@ using Framework.Common;
 
 namespace Control.Basic;
 
-[WithDirectProperty(typeof(IEnumerable), "ItemsSource")]
+[WithDirectProperty(typeof(IEnumerable), "ItemsSource", nullable: true)]
 [WithDirectProperty(typeof(object), "SelectedItem", nullable: true)]
 [WithDirectProperty(typeof(bool), "IsEditable")]
 [WithDirectProperty(typeof(string), "Text", nullable: true)]
