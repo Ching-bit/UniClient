@@ -4,7 +4,7 @@ using System.Text.Json;
 using System.Xml;
 using System.Xml.Serialization;
 
-namespace Framework.Utils.Helpers;
+namespace Framework.Utils;
 
 public static class ObjectHelper
 {

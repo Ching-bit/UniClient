@@ -28,7 +28,7 @@ public class UniViewModel : ObservableObject
     {
         Notification notification = new()
         {
-            Message = ResourceHelper.FindResource<string>(message)
+            Message = ResourceHelper.FindResource(message, message)
         };
         _notificationManager?.Show(notification, type: notificationType);
     }

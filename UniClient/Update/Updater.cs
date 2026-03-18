@@ -12,7 +12,6 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Threading;
 using Control.Basic;
 using Framework.Utils;
-using Framework.Utils.Helpers;
 using Plugin.AppEnv;
 using Plugin.Log;
 using UniClient;

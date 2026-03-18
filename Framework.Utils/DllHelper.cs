@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace Framework.Utils.Helpers;
+namespace Framework.Utils;
 
 public static class DllHelper
 {

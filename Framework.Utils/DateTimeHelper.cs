@@ -1,8 +1,13 @@
-namespace Framework.Utils.Helpers;
+namespace Framework.Utils;
 
 public static class DateTimeHelper
 {
     public static string Today(string format = "yyyyMMdd")
+    {
+        return DateTime.Now.ToString(format);
+    }
+    
+    public static string CurrentTime(string format = "HH:mm:ss")
     {
         return DateTime.Now.ToString(format);
     }

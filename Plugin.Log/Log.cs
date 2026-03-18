@@ -1,5 +1,5 @@
 using Framework.Common;
-using Framework.Utils.Helpers;
+using Framework.Utils;
 using NLog;
 using NLog.Layouts;
 

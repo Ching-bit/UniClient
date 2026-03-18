@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace Framework.Utils.Helpers;
+namespace Framework.Utils;
 
 public static class HttpHelper
 {
