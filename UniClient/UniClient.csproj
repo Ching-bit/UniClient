@@ -52,6 +52,6 @@
     </Target>
 
     <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
-      <Exec Command="CD &quot;$(SolutionDir)UniClient\Resources\Lang&quot;&#xA;python GenLangResources.py" />
+      <Exec Command="CD &quot;$(SolutionDir)$(ProjectName)\Resources\Lang&quot;&#xA;python GenLangResources.py" />
     </Target>
 </Project>
